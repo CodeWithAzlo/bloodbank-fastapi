@@ -1,19 +1,3 @@
-# from fastapi import FastAPI
-# from app.database import engine, Base
-# from routes import blood, admin
-
-
-# app = FastAPI()
-
-
-# # Create DB tables
-# Base.metadata.create_all(bind=engine)
-
-# # Include routers
-# app.include_router(blood.router)
-# app.include_router(admin.router)
-
-
 from fastapi import FastAPI
 from app.database import engine, Base
 from routes import blood, admin
@@ -21,9 +5,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Allow frontend  to access backend APIs
+# Allow frontend to access the backend APIs
 origins = [
-    "http://localhost:3000",  # React dev server
+    "http://localhost:3000",  # Pass here  React  or angular dev server, give an example of http://localhost:3000 of the react app
 ]
 
 app.add_middleware(
